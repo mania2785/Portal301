@@ -15,6 +15,6 @@ if __name__ == "__main__":
 
     if file_path:
         utils = Utils(file_path)
-        renderer = MeshRenderer(utils.mesh)
+        renderer = MeshRenderer(utils.mesh, utils)
 
     renderer.show()
