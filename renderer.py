@@ -33,6 +33,12 @@ class MeshRenderer:
         for i, mesh in enumerate(self.mesh):
             self.plotter.add_mesh(mesh, color='lightgray', label=f"Face {i}")
 
+            boundaries = mesh.extract_feature_edges(boundary_edges=True, 
+                                                    feature_edges=False, 
+                                                    manifold_edges=False, 
+                                                    non_manifold_edges=False)
+            self.plotter.add_mesh(boundaries, color='black', line_width=2, pickable=False)
+
         self.plotter.enable_anti_aliasing('fxaa')
 
         self.plotter.enable_element_picking(callback=self.pick_callback, mode='mesh', tolerance=0.001, left_clicking=True, show_message=False)
