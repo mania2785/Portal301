@@ -35,7 +35,7 @@ class MeshRenderer:
 
         self.plotter.enable_anti_aliasing('fxaa')
 
-        self.plotter.enable_element_picking(callback=self.pick_callback, mode='mesh', left_clicking=True, show_message=False)
+        self.plotter.enable_element_picking(callback=self.pick_callback, mode='mesh', tolerance=0.001, left_clicking=True, show_message=False)
         self.plotter.add_key_event("d", self.toggle_disassemble)
         self.plotter.reset_camera()
 
